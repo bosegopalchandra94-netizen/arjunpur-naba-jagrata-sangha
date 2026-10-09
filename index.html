@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arjunpur Naba Jagrata Sangha</title>
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><h1>ARJUNPUR NABA JAGRATA SANGHA</h1><p>Club Payment & Accounts</p></div></header>
+<main>
+<section class="cards">
+<div><span>মোট জমা</span><b id="income">₹0</b></div>
+<div><span>মোট খরচ</span><b id="expense">₹0</b></div>
+<div><span>বর্তমান ব্যালেন্স</span><b id="balance">₹0</b></div>
+</section>
+
+<section class="panel">
+<h2>নতুন লেনদেন</h2>
+<form id="txn">
+<select id="type"><option value="donation">Donation / অনুদান</option><option value="membership">Membership / মাসিক চাঁদা</option><option value="expense">Expense / খরচ</option></select>
+<input id="name" placeholder="নাম / Member Name" required>
+<input id="amount" type="number" min="1" placeholder="টাকার পরিমাণ" required>
+<input id="date" type="date" required>
+<select id="mode"><option>Cash</option><option>UPI</option><option>Bank</option></select>
+<input id="note" placeholder="বিবরণ / Note">
+<button>লেনদেন সংরক্ষণ করুন</button>
+</form>
+</section>
+
+<section class="panel">
+<h2>UPI Payment</h2>
+<p>সদস্য/দাতা এখানে UPI payment করতে পারবেন।</p>
+<input id="upiAmount" type="number" min="1" placeholder="Payment Amount">
+<a id="upi" class="button" href="#">UPI দিয়ে পেমেন্ট করুন</a>
+<p class="small">নোট: আপনার আসল UPI ID বসাতে নিচের কোডে <b>YOUR-UPI-ID</b> পরিবর্তন করুন।</p>
+</section>
+
+<section class="panel">
+<div class="row"><h2>লেনদেনের তালিকা</h2><button id="clear" class="danger">সব মুছুন</button></div>
+<div class="tablewrap"><table><thead><tr><th>তারিখ</th><th>ধরন</th><th>নাম</th><th>পরিমাণ</th><th>Mode</th><th>বিবরণ</th><th>Receipt</th></tr></thead><tbody id="list"></tbody></table></div>
+</section>
+</main>
+<script src="app.js"></script>
+</body></html>
